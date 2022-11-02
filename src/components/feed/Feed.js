@@ -5,7 +5,7 @@ import { Posts } from '../../dummyData'
 
 function Feed() {
   return (
-    <div className='feed'>
+    <div className='feed-container'>
       <div className="feed-wrapper">
         <Share />
         {Posts.map((post) => (
