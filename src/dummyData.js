@@ -1,52 +1,52 @@
 export const Users = [
   {
     id:1,
-    profilePicture: "assets/person/1.png",
+    profilePicture: "person/1.png",
     username: "fecat233",
   },
   {
     id:2,
-    profilePicture: "assets/person/2.png",
+    profilePicture: "person/2.png",
     username: "黄晓",
   },
   {
     id:3,
-    profilePicture: "assets/person/1.png",
+    profilePicture: "person/1.png",
     username: "周立",
   },
   {
     id:4,
-    profilePicture: "assets/person/2.png",
+    profilePicture: "person/2.png",
     username: "罗宇勤",
   },
   {
     id:5,
-    profilePicture: "assets/person/1.png",
+    profilePicture: "person/1.png",
     username: "黄晓薇",
   },
   {
     id:6,
-    profilePicture: "assets/person/2.png",
+    profilePicture: "person/2.png",
     username: "刘仕裕",
   },
   {
     id:7,
-    profilePicture: "assets/person/1.png",
+    profilePicture: "person/1.png",
     username: "张诗雨",
   },
   {
     id:8,
-    profilePicture: "assets/person/2.png",
+    profilePicture: "person/2.png",
     username: "徐晓倩",
   },
   {
     id:9,
-    profilePicture: "assets/person/1.png",
+    profilePicture: "person/1.png",
     username: "Gary Duty",
   },
   {
     id:10,
-    profilePicture: "assets/person/2.png",
+    profilePicture: "person/2.png",
     username: "Safak Kocaoglu",
   },
 ];
@@ -55,7 +55,7 @@ export const Posts = [
   {
     id: 1,
     desc: "今天天气不错..",
-    photo: "assets/posts/1.jpg",
+    photo: "posts/1.jpg",
     date: "5 mins ago",
     userId: 1,
     like: 32,
@@ -63,7 +63,7 @@ export const Posts = [
   },
   {
     id: 2,
-    photo: "assets/posts/2.jpg",
+    photo: "posts/2.jpg",
     date: "15 mins ago",
     userId: 2,
     like: 2,
@@ -72,7 +72,7 @@ export const Posts = [
   {
     id: 3,
     desc: "太棒了",
-    photo: "assets/posts/3.jpg",
+    photo: "posts/3.jpg",
     date: "1 hour ago",
     userId: 3,
     like: 61,
@@ -80,7 +80,7 @@ export const Posts = [
   },
   {
     id: 4,
-    photo: "assets/posts/4.jpg",
+    photo: "posts/4.jpg",
     date: "4 hours ago",
     userId: 4,
     like: 7,
@@ -88,7 +88,7 @@ export const Posts = [
   },
   {
     id: 5,
-    photo: "assets/posts/1.jpg",
+    photo: "posts/1.jpg",
     date: "5 hours ago",
     userId: 5,
     like: 23,
@@ -96,7 +96,7 @@ export const Posts = [
   },
   {
     id: 6,
-    photo: "assets/posts/3.jpg",
+    photo: "posts/3.jpg",
     date: "1 day ago",
     userId: 6,
     like: 44,
@@ -105,7 +105,7 @@ export const Posts = [
   {
     id: 7,
     desc: "呵呵",
-    photo: "assets/posts/2.jpg",
+    photo: "posts/2.jpg",
     date: "2 days ago",
     userId: 7,
     like: 52,
@@ -113,7 +113,7 @@ export const Posts = [
   },
   {
     id: 8,
-    photo: "assets/posts/4.jpg",
+    photo: "posts/4.jpg",
     date: "3 days ago",
     userId: 8,
     like: 15,
@@ -122,7 +122,7 @@ export const Posts = [
   {
     id: 9,
     desc: "好美的景色",
-    photo: "assets/posts/2.jpg",
+    photo: "posts/2.jpg",
     date: "5 days ago",
     userId: 9,
     like: 11,
@@ -130,7 +130,7 @@ export const Posts = [
   },
   {
     id: 10,
-    photo: "assets/posts/1.jpg",
+    photo: "posts/1.jpg",
     date: "1 week ago",
     userId: 10,
     like: 104,
