@@ -28,8 +28,8 @@ function Profile() {
         <div className="profile-right">
           <div className="profile-right-top">
             <div className="profile-cover">
-              <img className='profile-img-cover' src={PUBLIC_FOLDER + user.coverPicture} alt="" />
-              <img className='profile-img-user' src={PUBLIC_FOLDER + user.profilePicture} alt="" />
+              <img className='profile-img-cover' src={PUBLIC_FOLDER + 'posts/3.jpg'} alt="" />
+              <img className='profile-img-user' src={PUBLIC_FOLDER + 'person/user.png'} alt="" />
             </div>
             <div className="profile-info">
               <h4 className='profile-info-name'>{user.username}</h4>

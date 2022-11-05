@@ -13,7 +13,7 @@ function Rightbar({user}) {
        <div className="birthday-container">
           <Cake className='birthday-icon'/>
           <span className="birthday-text">
-            <b>{user.username}</b>和<b>其他2位朋友</b>拥有共同生日
+            <b>fecat233</b>和<b>其他2位朋友</b>拥有共同生日
           </span>
       </div>
       <img className='rightbar-ad' src="/assets/posts/3.jpg" alt="" />
