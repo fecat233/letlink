@@ -2,27 +2,43 @@ import './rightbar.css'
 import { Cake } from '@mui/icons-material'
 import { Users } from '../../dummyData'
 import Online from '../online/Online'
+import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import axiosInstancez from '../../Axios'
 
 function Rightbar({user}) {
+  const [friends, setFriends] = useState([])
+
+  useEffect(() => {
+    const fetchFriends = async () => {
+      try {
+        const res = await axiosInstancez.get(`/users/friends/${user._id}`)
+        setFriends(res.data)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    fetchFriends()
+  }, [user])
 
   const PUBLIC_FOLDER = process.env.REACT_APP_PUBLIC_FOLDER
 
   const HomeRightbar = () => {
     return (
       <>
-       <div className="birthday-container">
+        <div className="birthday-container">
           <Cake className='birthday-icon'/>
           <span className="birthday-text">
             <b>fecat233</b>和<b>其他2位朋友</b>拥有共同生日
           </span>
-      </div>
-      <img className='rightbar-ad' src="/assets/posts/3.jpg" alt="" />
-      <h4 className="rightbar-title">在线的朋友</h4>
-      <ul className="rightbar-friends-list">
-        {
-          Users.map(user => <Online key={user.id} user={user}/>)
-        }
-      </ul>
+        </div>
+        <img className='rightbar-ad' src="/assets/posts/3.jpg" alt="" />
+        <h4 className="rightbar-title">在线的朋友</h4>
+        <ul className="rightbar-friends-list">
+          {
+            Users.map(user => <Online key={user.id} user={user}/>)
+          }
+        </ul>
       </>
     )
   }
@@ -47,30 +63,16 @@ function Rightbar({user}) {
        </div>
        <h4 className="rightbar-title">朋友</h4>
        <div className="rightbar-followings">
-        <div className="rightbar-following">
-          <img src={`${PUBLIC_FOLDER}person/1.png`} alt="" className="rightbar-following-img" />
-          <span className="rightbar-following-name">徐晓倩</span>
-        </div>
-        <div className="rightbar-following">
-          <img src={`${PUBLIC_FOLDER}person/1.png`} alt="" className="rightbar-following-img" />
-          <span className="rightbar-following-name">徐晓倩</span>
-        </div>
-        <div className="rightbar-following">
-          <img src={`${PUBLIC_FOLDER}person/1.png`} alt="" className="rightbar-following-img" />
-          <span className="rightbar-following-name">徐晓倩</span>
-        </div>
-        <div className="rightbar-following">
-          <img src={`${PUBLIC_FOLDER}person/1.png`} alt="" className="rightbar-following-img" />
-          <span className="rightbar-following-name">徐晓倩</span>
-        </div>
-        <div className="rightbar-following">
-          <img src={`${PUBLIC_FOLDER}person/1.png`} alt="" className="rightbar-following-img" />
-          <span className="rightbar-following-name">徐晓倩</span>
-        </div>
-        <div className="rightbar-following">
-          <img src={`${PUBLIC_FOLDER}person/1.png`} alt="" className="rightbar-following-img" />
-          <span className="rightbar-following-name">徐晓倩</span>
-        </div>
+        {
+          friends.map((friend) => (
+            <Link to={`/profile/${friend.username}`} style={{textDecoration:"none"}}>
+              <div className="rightbar-following">
+                <img src={friend.profilePicture? PUBLIC_FOLDER + friend.profilePicture : PUBLIC_FOLDER + "person/user.png"} alt="" className="rightbar-following-img" />
+                <span className="rightbar-following-name">{friend.username}</span>
+              </div>
+            </Link>
+          ))
+        }
        </div>
       </>
     )
