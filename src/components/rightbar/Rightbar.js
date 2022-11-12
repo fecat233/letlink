@@ -2,24 +2,51 @@ import './rightbar.css'
 import { Cake } from '@mui/icons-material'
 import { Users } from '../../dummyData'
 import Online from '../online/Online'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import axiosInstancez from '../../Axios'
+import axiosInstance from '../../Axios'
+import { AuthContext } from '../../context/AuthContext'
+import { Add, Remove } from '@mui/icons-material'
+
 
 function Rightbar({user}) {
   const [friends, setFriends] = useState([])
+  const [followed, setFollowed] = useState(false)
+  const { user: currentUser } = useContext(AuthContext)
+
+  useEffect(() => {
+    setFollowed(currentUser.followings.includes(user?._id))
+  }, [currentUser, user?._id])
 
   useEffect(() => {
     const fetchFriends = async () => {
       try {
-        const res = await axiosInstancez.get(`/users/friends/${user._id}`)
+        const res = await axiosInstance.get(`/users/friends/${user?._id}`)
         setFriends(res.data)
       } catch (error) {
         console.log(error)
       }
     }
     fetchFriends()
-  }, [user])
+  }, [user?._id])
+
+  const handleFollow = async (e) => {
+    e.preventDefault()
+    try {
+      if(followed) {
+        await axiosInstance.put(`/users/${user._id}/unfollow`, {
+          userId: currentUser._id
+        })
+      } else {
+        await axiosInstance.put(`/users/${user._id}/follow`, {
+          userId: currentUser._id
+        })
+      }
+    } catch (error) {
+      console.log(error)
+    }
+    setFollowed(!followed)
+  }
 
   const PUBLIC_FOLDER = process.env.REACT_APP_PUBLIC_FOLDER
 
@@ -46,6 +73,12 @@ function Rightbar({user}) {
   const ProfileRightbar = () => {
     return (
       <>
+      {user.username !== currentUser.username && (
+        <button className='rightbar-follow-btn' onClick={handleFollow}>
+          {followed? "取消关注": "关注"}
+          {followed? <Remove />: <Add />}
+        </button>
+      )}
        <h4 className="rightbar-title">用户信息</h4>
        <div className="rightbar-info">
         <div className="rightbar-info-item">
