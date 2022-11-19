@@ -1,0 +1,14 @@
+PUT http://localhost:8080/api/users/636255e96e6c44e823f39f12/follow HTTP/1.1
+Content-Type: application/json
+
+{
+  "userId": "636328bb3674304fdefa7926"
+}
+
+###
+PUT http://localhost:8080/api/users/636255e96e6c44e823f39f12/unfollow HTTP/1.1
+Content-Type: application/json
+
+{
+  "userId": "636328bb3674304fdefa7926"
+}

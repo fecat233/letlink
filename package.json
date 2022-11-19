@@ -1,0 +1,31 @@
+{
+  "name": "letlink",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fecat233/letlink-backend.git"
+  },
+  "author": "fecat233",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fecat233/letlink-backend/issues"
+  },
+  "homepage": "https://github.com/fecat233/letlink-backend#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "helmet": "^6.0.0",
+    "mongoose": "^6.7.0",
+    "morgan": "^1.10.0",
+    "multer": "1.4.2",
+    "nodemon": "^2.0.20",
+    "path": "^0.12.7"
+  }
+}

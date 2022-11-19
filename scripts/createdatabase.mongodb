@@ -1,0 +1,19 @@
+// MongoDB Playground
+// Use Ctrl+Space inside a snippet or a string literal to trigger completions.
+
+const database = 'NEW_DATABASE_NAME';
+const collection = 'NEW_COLLECTION_NAME';
+
+// Create a new database.
+use(letlink);
+
+db.createUser({
+  user: 'fecat233',
+  pwd: '123456',
+  roles: [
+    {
+      role: "readWrite",
+      db: 'letlink'
+    }
+  ]
+})
